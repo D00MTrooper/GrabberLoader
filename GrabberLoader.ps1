@@ -8,7 +8,7 @@ $link = (New-Object -ComObject WScript.Shell).CreateShortcut("$env:USERPROFILE\D
 $target = $link.TargetPath
 Start-Process -FilePath $target -Verb runAs
 Start-Sleep -Seconds 4
-$process = Get-Process -Name cmd.exe
+$process = Get-Process -Name cmd
 $process.MainWindowHandle
 $process.MainWindowHandle.WindowStyle = 'Minimized'
 
