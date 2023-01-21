@@ -7,3 +7,5 @@ Start-Sleep -Seconds 1
 $link = (New-Object -ComObject WScript.Shell).CreateShortcut("$env:USERPROFILE\Desktop\MyShortcut.lnk")
 $target = $link.TargetPath
 Start-Process -FilePath $target -Verb runAs
+ $apps = New-Object -ComObject Shell.Application
+ $apps.MinimizeAll()
