@@ -5,7 +5,7 @@ WINDOWS d
 DELAY 1500
 WINDOWS r
 DELAY 1500
-STRING powershell
+STRING powershell -Command "Start-Process powershell -Verb RunAs"
 ENTER
 DELAY 750
 LEFTARROW
